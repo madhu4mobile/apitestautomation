@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.ProxySpecification;
 import model.User;
 import utils.ConfigManager;
 import constants.EndPoints;
@@ -15,6 +16,8 @@ public class UserServiceHelper {
 
     public UserServiceHelper(){
         RestAssured.baseURI = BASE_URL;
+        //RestAssured.proxy(ProxySpecification.host("127.0.0.1").withPort(8443));
+        //RestAssured.proxy = host("127.0.0.1").withPort(8888);
         RestAssured.useRelaxedHTTPSValidation();
     }
 
