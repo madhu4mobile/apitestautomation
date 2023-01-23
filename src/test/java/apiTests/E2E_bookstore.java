@@ -10,7 +10,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class E2E_Tests {
+public class E2E_bookstore {
 
     public static void main(String[] args) {
         //String userID = "9b5f49ab-eea9-45f4-9d66-bcf56a531b85";
@@ -69,7 +69,6 @@ public class E2E_Tests {
 
         jsonString = response.asString();
         List<Map<String, String>> collectionOfIsbns = JsonPath.from(jsonString).get("username");
-
         String firstIsbn = collectionOfIsbns.get(0).get("username");
         System.out.println("firstIsnb"+firstIsbn);
 
